@@ -14,10 +14,10 @@ header .wrap{max-width:1100px;margin:0 auto;display:flex;align-items:center;just
 .logo img{height:48px;width:48px;object-fit:contain}
 nav a{color:white;text-decoration:none;margin:0 10px;padding:8px 12px;border-radius:6px;font-weight:500}
 nav a.active, nav a:hover{background:rgba(255,255,255,.18)}
-.container{max-width:1100px;margin:40px auto;padding:0 20px}
-.hero{background:linear-gradient(90deg,var(--purple),#8b5dc7);color:white;padding:60px 20px;border-radius:16px;text-align:center}
-.btn{background:var(--gold);color:#000;padding:12px 20px;border:none;border-radius:8px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:24px}
+.container{max-width:10px;margin:20px auto;padding:5px}
+.hero{background:linear-gradient(90deg,var(--purple),#8b5dc7);color:white;padding:10px 10px;border-radius:6px;text-align:center}
+.btn{background:var(--gold);color:#000;padding:12px 10px;border:none;border-radius:8px;font-weight:200;cursor:pointer;text-decoration:none;display:inline-block}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10pxx;margin-top:24px}
 .card{background:white;padding:20px;border-radius:12px;box-shadow:0 4px 12px rgba(106,74,154,.08);border:1px solid var(--light)}
 .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
 .gallery-grid img{width:100%;height:180px;object-fit:cover;border-radius:10px;border:2px solid var(--light)}
@@ -45,7 +45,6 @@ footer{background:#2d1f42;color:#ddd;text-align:center;padding:20px;margin-top:6
     </nav>
   </div>
 </header>
-
 <main class="container">
   <section class="hero">
     <h1>Body, Soul & Mind</h1>
@@ -53,7 +52,6 @@ footer{background:#2d1f42;color:#ddd;text-align:center;padding:20px;margin-top:6
     <p>Kwabeng Anglican Senior High Technical School. Academic Excellence & Discipline since 1983.</p>
     <a href="admission.html" class="btn" style="margin-top:16px">Apply for SHS 1</a>
   </section>
-
   <section style="margin-top:40px">
     <h2>Management’s Message</h2>
     <div class="card">
@@ -61,10 +59,8 @@ footer{background:#2d1f42;color:#ddd;text-align:center;padding:20px;margin-top:6
       <p><b>Management, KASHTS</b></p>
     </div>
   </section>
-
   <section style="margin-top:40px">
     <h2>Programs Offered</h2>
-
     <div class="grid">
    <div class="card"><h5>General Science</h5>
     <div class="card"><h5>Visual Arts</h5>
@@ -72,11 +68,7 @@ footer{background:#2d1f42;color:#ddd;text-align:center;padding:20px;margin-top:6
   <div class="card"><h5>Agriculture Science</h5>
    <div class="card"><h5>Home Economics</h5>
    <div class="card"><h5>Business</h5> 
-    </div>
-  </section>
-</main> 
-
-
+    </div> 
 <footer>© 2026 Kwabeng Anglican SHS/Tech | Kwabeng, Eastern Region | Contact: 024 480 0137</footer>
 <footer> Designed by Gokah Israel</footer>
 
