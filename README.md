@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kwabeng Anglican Senior High Technical School | Home</title>
+<title>Kwabeng Anglican Senior High Technical School</title>
 <style> 
 :root{
   --purple:#6a4a9a; --light:#f3eef9; --gold:#f5b400; --bg:#faf8fd;
@@ -79,5 +79,4 @@ footer{background:#2d1f42;color:#ddd;text-align:center;padding:20px;margin-top:6
 
 <footer>© 2026 Kwabeng Anglican SHS/Tech | Kwabeng, Eastern Region | Contact: 024 480 0137</footer>
 <footer> Designed by Gokah Israel</footer>
-</body>
-</html>
+
