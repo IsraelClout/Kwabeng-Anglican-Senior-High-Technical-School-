@@ -69,6 +69,8 @@ footer{background:#2d1f42;color:#ddd;text-align:center;padding:20px;margin-top:6
    <div class="card"><h5>Home Economics</h5>
    <div class="card"><h5>Business</h5> 
     </div> 
-<footer>© 2026 Kwabeng Anglican SHS/Tech | Kwabeng, Eastern Region | Contact: 024 480 0137</footer>
+   </div>
+  </div></sectionfooterion
+  sec>ooter>© 2026 Kwabeng Anglican SHS/Tech | Kwabeng, Eastern Region | Contact: 024 480 0137</footer>
 <footer> Designed by Gokah Israel</footer>
 
