@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kwabeng Anglican Senior High Technical School</title>
+<style>
+:root{
+  --purple:#6a4a9a; --light:#f3eef9; --gold:#f5b400; --bg:#faf8fd; --dark:#2d1f42;
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',sans-serif}
+body{background:var(--bg);color:#222;line-height:1.6}
+img{max-width:100%;display:block}
+
+/* ===== CONSTANT HEADER / DASHBOARD ===== */
+header{background:var(--purple);color:white;padding:12px 20px;position:sticky;top:0;z-index:50;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+header .wrap{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1rem;line-height:1.2}
+.logo img{height:48px;width:48px;object-fit:contain;border-radius:8px;background:white;padding:2px}
+.motto{font-size:.8rem;opacity:.9;font-weight:400}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;padding:10px 14px;border-radius:8px;font-weight:600;transition:.2s}
+nav a.active, nav a:hover{background:rgba(255,255,255,.18)}
+
+/* ===== LAYOUT ===== */
+.container{max-width:1100px;margin:40px auto;padding:0 20px}
+.hero{background:linear-gradient(135deg,var(--purple),#8b5dc7);color:white;padding:60px 20px;border-radius:16px;text-align:center}
+.btn{background:var(--gold);color:#000;padding:12px 20px;border:none;border-radius:8px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:.2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 12px rgba(0,0,0,.15)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:24px}
+.card{background:white;padding:20px;border-radius:12px;box-shadow:0 4px 12px rgba(106,74,154,.08);border:1px solid var(--light)}
+footer{background:var(--dark);color:#ddd;text-align:center;padding:20px;margin-top:60px;font-size:.9rem}
+
+/* ===== BETTER GALLERY CSS ===== */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:20px}
+.gallery-item{
+  position:relative;border-radius:12px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,.1);
+  border:2px solid var(--light);background:white;transition:.3s;cursor:pointer;
+}
+.gallery-item:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(106,74,154,.2)}
+.gallery-item img{width:100%;height:220px;object-fit:cover;transition:.4s}
+.gallery-item:hover img{transform:scale(1.08)}
+.caption{
+  position:absolute;left:0;right:0;bottom:0;
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,.75));
+  color:white;padding:12px 14px;font-size:.9rem;font-weight:600;
+  transform:translateY(100%);transition:.3s;
+}
+.gallery-item:hover .caption{transform:translateY(0)}
+
+/* ===== FORM ===== */
+form{display:grid;gap:12px;max-width:600px}
+input,select,textarea{padding:12px;border:1px solid #ccc;border-radius:8px;width:100%;font-size:1rem}
+input:focus,textarea:focus{outline:2px solid var(--purple);border-color:transparent}
+
+/* ===== MOBILE ===== */
+@media(max-width:700px){
+  .logo{font-size:.9rem}.logo img{height:40px;width:40px}
+  nav a{padding:8px 10px;font-size:.9rem}
+  .gallery-grid{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="logo">
+      <img src="FB_IMG_1782814163972.jpg"alt="KASS Tech Crest">
+      <div>Kwabeng Anglican SHS/Tech</div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="admission.html">Admission</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <h1>School Gallery</h1>
+  <p>Life at Kwabeng Anglican Senior High Technical School</p>
+  
+  <div class="gallery-grid" style="margin-top:20px">
+    <div class="gallery-item">
+      <img src="FB_IMG_1782814163972.jpg">
+    </div>
+    <div class="gallery-item">
+      <img src="FB_IMG_1782814091841.jpg">
+    </div>
+    <div class="gallery-item">
+      <img src="FB_IMG_1782814097360.jpg">
+    </div>
+    <div class="gallery-item">
+      <img src="IMG-20260630-WA0035.jpg">
+    </div>
+    <div class="gallery-item">
+    <img src="3aef985b34f86af65d83ccaa92600097.png">
+    </div>
+    <div class="gallery-item">
+     <img src="2298d94c7e410e9c2ed71c70af0500d8 (1) (1) (1) (1) (1).png">
+  </div>  
+  <div class="gallery-item">
+      <img src="85acd074219aaeac83683ca42c4831ba.png">
+      </div>
+      <div class="gallery-item">
+     <img src="eaf862ca56821c5830661ac8b1477d92.png">
+     </div>
+      <div class="gallery-item">
+      <img src="6d06c1312b9f7f016f3b3f8120b933f6.png">
+      </div>
+       <div class="gallery-item">
+    <img src="93bb43e51e633dc51086f2a45d59f967.png">
+      </div>
+        <div class="gallery-item">
+    <img src=" IMG-20260630-WA0067.jpg">
+      </div>
+       <div class="gallery-item">
+    <img src="FB_IMG_1782846973112.jpg ">
+      </div>
+      <div class="gallery-item">
+    <img src="FB_IMG_1782846991348.jpg">
+      </div>
+         <div class="gallery-item">
+    <img src="pm_1782230655679_cmp.jpg">
+      </div>
+     <div class="gallery-item">
+    <img src=" d9e3dd2cf1bd8d4f48cd5a69f61b367f.png">
+      </div>
+           <div class="gallery-item">
+    <img src=" IMG-20260630-WA0068.jpg">
+      </div>
+          <div class="gallery-item">
+    <img src=" IMG-20260630-WA0072.jpg" >
+      </div> 
+        <div class="gallery-item">
+    <img src="Screenshot_20260630-191246 (1).png ">
+      </div>
+       <div class="gallery-item">
+    <img src=" IMG-20260630-WA0077.jpg" >
+      </div> 
+       <div class="gallery-item">
+    <img src="Screenshot_20260630-191542 (1) (1).png ">
+      </div> 
+        <div class="gallery-item">
+    <img src=" IMG-20260630-WA0074.jpg" >
+      </div> 
+           <div class="gallery-item">
+    <img src="Screenshot_20260630-191233 (1).png ">
+      </div>
+       <div class="gallery-item">
+    <img src="7298d0affc631188b8a5f1263bf956bf.png ">
+      </div>
+         <div class="gallery-item">
+    <img src="Screenshot_20260630-191356 (1).png">
+      </div>
+         <div class="gallery-item">
+           </div>
+    <img src=" IMG-20260622-WA0077.jpg">
+           <div class="gallery-item">
+    <img src="pm_1782230656309_cmp.jpg">
+      </div>
+            <div class="gallery-item">
+    <img src=" IMG-20260622-WA0071.jpg">
+    </div>
+           <div class="gallery-item">
+    <img src="IMG-20260630-WA0065.jpg ">
+      </div>
+       <div class="gallery-item">
+    <img src="Screenshot_20260630-191126 (1).png ">
+      </div>
+      <div class="gallery-item">
+    <img src="FB_IMG_1782849806022.jpg">
+      </div>
+     <div class="gallery-item">
+    <img src="FB_IMG_1782847000015.jpg ">
+    </div>
+       <div class="gallery-item">
+    <img src="IMG-20260630-WA0075.jpg">
+      </div>
+   <div class="gallery-item">
+    <img src="pm_1782230651856_cmp.jpg ">
+      </div>
+      <div class="gallery-item">
+    <img src="pm_1782230655745_cmp.jpg>
+    </div>
+      </div>
+</main>
+
+<footer>© 2026 Kwabeng Anglican SHS/Tech</footer>
+<footer> Designed by Gokah Israel</footer>
+
+<script>
+// Click to view full size
+document.querySelectorAll('.gallery-item img').forEach(img=>{
+  img.style.cursor='pointer';
+  img.onclick=()=>window.open(img.src,'_blank');
+})
+</script>
+</body>
+</html>
