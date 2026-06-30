@@ -1,0 +1,165 @@
+DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kwabeng Anglican Senior High Technical School</title>
+<style>
+:root{
+  --purple:#6a4a9a; --light:#f3eef9; --gold:#f5b400; --bg:#faf8fd; --dark:#2d1f42;
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',sans-serif}
+body{background:var(--bg);color:#222;line-height:1.6}
+img{max-width:100%;display:block}
+
+/* ===== CONSTANT DASHBOARD / HEADER - SAME ON ALL PAGES ===== */
+header{background:var(--purple);color:white;padding:12px 20px;position:sticky;top:0;z-index:50;box-shadow:0 4px 12px rgba(106,74,154,.25)}
+header .wrap{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1rem;line-height:1.2;letter-spacing:.2px}
+.logo img{height:48px;width:48px;object-fit:contain;border-radius:10px;background:white;padding:3px;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.motto{font-size:.8rem;opacity:.9;font-weight:400}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;padding:10px 14px;border-radius:8px;font-weight:700;transition:.2s}
+nav a.active, nav a:hover{background:rgba(255,255,255,.22);box-shadow:inset 0 0 0 1px rgba(255,255,255,.2)}
+
+/* ===== LAYOUT ===== */
+.container{max-width:1100px;margin:40px auto;padding:0 20px}
+.hero{background:linear-gradient(135deg,var(--purple) 0%, #8b5dc7 100%);color:white;padding:60px 20px;border-radius:18px;text-align:center;box-shadow:0 8px 20px rgba(106,74,154,.2)}
+.btn{background:var(--gold);color:#000;padding:14px 22px;border:none;border-radius:10px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block;transition:.2s;border:2px solid transparent}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(245,180,0,.3)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:24px}
+.card{background:white;padding:24px;border-radius:14px;box-shadow:0 6px 16px rgba(106,74,154,.08);border:1px solid var(--light)}
+footer{background:var(--dark);color:#ddd;text-align:center;padding:22px;margin-top:60px;font-size:.9rem}
+
+/* ===== GALLERY ===== */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:20px}
+.gallery-item{position:relative;border-radius:14px;overflow:hidden;box-shadow:0 6px 14px rgba(0,0,0,.1);border:2px solid var(--light);transition:.3s;cursor:pointer;background:white}
+.gallery-item:hover{transform:translateY(-5px);box-shadow:0 10px 24px rgba(106,74,154,.22)}
+.gallery-item img{width:100%;height:220px;object-fit:cover;transition:.4s}
+.gallery-item:hover img{transform:scale(1.08)}
+.caption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.8));color:white;padding:12px 14px;font-size:.9rem;font-weight:700;transform:translateY(100%);transition:.3s}
+.gallery-item:hover .caption{transform:translateY(0)}
+
+/* ===== ADMISSION PAGE - BETTER CSS ===== */
+.admission-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:24px;margin-top:30px}
+.program-list ul{margin-left:18px;margin-top:12px;line-height:2.2}
+.program-list li{padding-left:4px;border-left:3px solid var(--gold);padding-left:10px;margin-bottom:6px}
+
+.admission-form{
+  background:linear-gradient(180deg,white,#fcfbff);
+  border:2px solid var(--light);border-radius:16px;padding:26px;
+  box-shadow:0 10px 24px rgba(106,74,154,.12);position:relative;overflow:hidden;
+}
+.admission-form::before{ /* Purple accent bar */
+  content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--purple),var(--gold));
+}
+.admission-form h3{color:var(--purple);margin-bottom:6px;font-size:1.2rem}
+.form-note{font-size:.85rem;opacity:.7;margin-bottom:14px}
+
+.input-group{display:grid;gap:12px}
+.input-group input, .input-group select, .input-group textarea{
+  padding:14px 14px;border:1.5px solid #dcd4e6;border-radius:10px;width:100%;font-size:1rem;
+  background:#fff;transition:.2s;
+}
+.input-group input:focus, .input-group select:focus, .input-group textarea:focus{
+  outline:none;border-color:var(--purple);box-shadow:0 0 0 3px rgba(106,74,154,.15);
+}
+.req-box{background:var(--light);border:1px dashed var(--purple);border-radius:12px;padding:16px;margin-top:20px}
+.req-box h3{color:var(--purple);margin-bottom:8px}
+
+/* ===== MOBILE ===== */
+@media(max-width:900px){.admission-wrap{grid-template-columns:1fr}}
+@media(max-width:700px){
+  .logo{font-size:.9rem}.logo img{height:40px;width:40px}
+  nav a{padding:8px 10px;font-size:.9rem}
+  .gallery-grid{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+}
+</style>
+</head>
+<body>
+<!-- ===== CONSTANT HEADER - COPY TO ALL PAGES ===== -->
+<header>
+  <div class="wrap">
+    <div class="logo">
+      <img src="FB_IMG_1782814163972.jpg"  alt="KASS Tech Crest">
+      <div>
+        Kwabeng Anglican SHS/Tech<br>
+        <span class="motto">Body, Soul, Mind | Est. 1983</span>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="admission.html" class="active">Admission</a> <!-- Only change this -->
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding:44px 20px">
+    <h1>2026/2027 Admissions - SHS 1</h1>
+    <p>Academic + Technical Excellence at KASS Tech. CSSPS Placement Required.</p>
+  </section>
+
+  <div class="admission-wrap">
+    <div class="card program-list">
+      <h3>Programs Available</h3>
+      <ul>
+         <li><b>General Science</b></li>
+         <li><b>Agriculture</b></li>           
+        <li><b>General Arts</b></li>
+        <li><b>Visual Arts</b></li>
+        <li><b>Technical:</b> Building & Construction,Applied Electricity & Electronics</li>
+        <li><b>Home Economics:</b> Clothing, Food </li>
+         <li><b>Business</b></li>
+      </ul>
+      <a href="gallery.html" class="btn" style="margin-top:16px;width:100%;text-align:center">See School Life →</a>
+    </div>
+
+    <form id="applyForm" class="admission-form">
+      <h3>Express Interest Form</h3>
+      <p class="form-note">Fill this and KASHTS Admin will call you....</p>
+      
+      <div class="input-group">
+        <input name="name" placeholder="Student Full Name" required>
+        <input name="phone" placeholder="Parent/Guardian WhatsApp Number" type="tel" pattern="[0-9]{10,}" required>
+        <input name="index" placeholder="BECE Index Number" required>
+        
+        <select name="program" required>
+          <option value="">Select Program</option>
+         <option>General Science</option>
+        <option>General Arts</option>
+          <option>Visual Arts</option>
+          <option>Home Economics</option>
+          <option>Business</option>
+          <option> Applied Electricity & Electronics</option>
+          <option>Building & Construction</option>
+        </select>
+        
+        <textarea name="details" placeholder="BECE Aggregate & JHS Attended" rows="3"></textarea>
+        <button class="btn" type="submit">Submit Application</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="req-box">
+    <h3>Admission Requirements</h3>
+    <p>1. BECE Certificate 2. Birth Certificate 3. Passport Pictures x4  
+    <br>Cut-off: Science ~15 | Others ~20. Final placement by CSSPS only.</p>
+  </div>
+</main>
+
+<footer>© 2026 Kwabeng Anglican SHS/Tech | Kwabeng, Eastern Region | Contact: 024 480 0137</footer>
+<footer> Designed by Gokah Israel</footer>
+
+<script>
+// Collect form data and show alert
+document.getElementById('applyForm').onsubmit = e => {
+  e.preventDefault();
+  const f = e.target;
+  alert(`Application received for ${f.program.value}!\nName: ${f.name.value}\nKASS Tech will contact ${f.phone.value}. CSSPS still applies.`);
+  f.reset();
+}
+</script>
+</body>
+</html>
