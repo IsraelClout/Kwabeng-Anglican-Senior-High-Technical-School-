@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Kwabeng Anglican SHS/Tech</title>
+<style>
+:root{
+  --purple:#6a4a9a; --light:#f3eef9; --gold:#f5b400; --bg:#faf8fd; --dark:#2d1f42;
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',sans-serif}
+body{background:var(--bg);color:#222;line-height:1.6}
+img{max-width:100%;display:block}
+
+header{background:var(--purple);color:white;padding:12px 20px;position:sticky;top:0;z-index:50;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+header .wrap{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1rem;line-height:1.2}
+.logo img{height:48px;width:48px;object-fit:contain;border-radius:8px;background:white;padding:2px}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;padding:10px 14px;border-radius:8px;font-weight:600;transition:.2s}
+nav a.active, nav a:hover{background:rgba(255,255,255,.18)}
+
+.container{max-width:1100px;margin:40px auto;padding:0 20px}
+h1{color:var(--purple);text-align:center;margin-bottom:8px}
+.btn{background:var(--gold);color:#000;padding:10px 16px;border:none;border-radius:8px;font-weight:700;cursor:pointer;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.active{background:var(--purple);color:white}
+footer{background:var(--dark);color:#ddd;text-align:center;padding:20px;margin-top:60px;font-size:.9rem}
+
+/* ===== FEATURE 1: FILTER + SEARCH BAR ===== */
+.controls{display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;align-items:center;margin:20px 0}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+#searchBox{padding:10px 12px;border:1px solid #ccc;border-radius:8px;font-size:1rem;min-width:220px}
+
+/* ===== GALLERY GRID ===== */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:20px}
+.gallery-item{
+  position:relative;border-radius:12px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,.1);
+  border:2px solid var(--light);background:white;transition:.3s;cursor:pointer;
+}
+.gallery-item:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(106,74,154,.2)}
+.gallery-item img{width:100%;height:220px;object-fit:cover;transition:.4s}
+.gallery-item:hover img{transform:scale(1.08)}
+.caption{
+  position:absolute;left:0;right:0;bottom:0;
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,.75));
+  color:white;padding:12px 14px;font-size:.9rem;font-weight:600;
+  transform:translateY(100%);transition:.3s;
+}
+.gallery-item:hover .caption{transform:translateY(0)}
+.hidden{display:none !important}
+
+/* ===== FEATURE 2: LIGHTBOX POPUP ===== */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:999;align-items:center;justify-content:center;padding:20px}
+.lightbox.show{display:flex}
+.lightbox img{max-width:90vw;max-height:85vh;border-radius:12px;box-shadow:0 0 30px rgba(0,0,0,.5)}
+.lightbox .close{position:absolute;top:20px;right:30px;font-size:40px;color:white;cursor:pointer;font-weight:700}
+.lightbox .caption-lb{position:absolute;bottom:20px;color:white;text-align:center;font-size:1rem;background:rgba(0,0,0,.6);padding:8px 16px;border-radius:8px}
+
+@media(max-width:700px){
+  .logo{font-size:.9rem}.logo img{height:40px;width:40px}
+  nav a{padding:8px 10px;font-size:.9rem}
+  .gallery-grid{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+  .controls{flex-direction:column;align-items:stretch}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="logo">
+      <img src="FB_IMG_1782814163972.jpg" alt="KASS Tech Crest">
+      <div>Kwabeng Anglican SHS/Tech</div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="admission.html">Admission</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>School Gallery</h1>
+  <p style="text-align:center;color:#555;margin-bottom:20px">Life at Kwabeng Anglican Senior High Technical School</p>
+  
+  <!-- FEATURE 1: FILTER + SEARCH -->
+  <div class="controls">
+    <div class="filters">
+      <button class="btn active" data-filter="all">All</button>
+      <button class="btn" data-filter="students">Students</button>
+      <button class="btn" data-filter="campus">Campus</button>
+      <button class="btn" data-filter="events">Events</button>
+    </div>
+    <input type="text" id="searchBox" placeholder="Search gallery... e.g. bus, class">
+  </div>
+
+  <div class="gallery-grid" id="gallery">
+    <!-- FIXED: All img tags closed properly + added data-category + caption -->
+    <div class="gallery-item" data-category="campus" data-keywords="crest logo">
+      <img src="FB_IMG_1782814163972.jpg" alt="School Crest">
+      <div class="caption">School Crest</div>
+    </div>
+    <div class="gallery-item" data-category="students" data-keywords="class general arts">
+      <img src="FB_IMG_1782814091841.jpg" alt="General Arts Class">
+      <div class="caption">General Arts Class</div>
+    </div>
+    <div class="gallery-item" data-category="students" data-keywords="home ec girls">
+      <img src="FB_IMG_1782814097360.jpg" alt="Home Economics">
+      <div class="caption">Home Economics Practical</div>
+    </div>
+    <div class="gallery-item" data-category="campus" data-keywords="bus transport">
+      <img src="IMG-20260630-WA0035.jpg" alt="School Bus">
+      <div class="caption">School Bus</div>
+    </div>
+    <div class="gallery-item" data-category="students" data-keywords="technical workshop">
+      <img src="3aef985b34f86af65d83ccaa92600097.png" alt="Technical Dept">
+      <div class="caption">Technical Department</div>
+    </div>
+    <div class="gallery-item" data-category="events" data-keywords="speech day durbar">
+      <img src="2298d94c7e410e9c2ed71c70af0500d8 (1) (1) (1) (1) (1).png" alt="Speech Day">
+      <div class="caption">Speech & Prize Giving</div>
+    </div>
+    <div class="gallery-item" data-category="students" data-keywords="visual arts">
+      <img src="85acd074219aaeac83683ca42c4831ba.png" alt="Visual Arts">
+      <div class="caption">Visual Arts Studio</div>
+    </div>
+    <div class="gallery-item" data-category="campus" data-keywords="assembly hall">
+      <img src="eaf862ca56821c5830661ac8b1477d92.png" alt="Assembly">
+      <div class="caption">Morning Assembly</div>
+    </div>
+    <!-- Add the rest of your images here with captions + categories -->
+    <div class="gallery-item" data-category="students" data-keywords="science lab">
+      <img src="6d06c1312b9f7f016f3b3f8120b933f6.png" alt="Science Lab">
+      <div class="caption">Science Laboratory</div>
+    </div>
+    <div class="gallery-item" data-category="campus" data-keywords="dormitory boarding">
+      <img src="93bb43e51e633dc51086f2a45d59f967.png" alt="Dormitory">
+      <div class="caption">Boarding House</div>
+    </div>
+    <!-- ...keep adding all your 20+ images with this same structure -->
+  </div>
+</main>
+
+<!-- FEATURE 2: LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="close" id="closeLb">&times;</span>
+  <img id="lbImg" src="" alt="">
+  <div class="caption-lb" id="lbCaption"></div>
+</div>
+
+<footer>
+  © 2026 Kwabeng Anglican SHS/Tech <br> Designed by Gokah Israel
+</footer>
+
+<script>
+// ===== FIX 1: BROKEN HTML FIXED =====
+// All <img> tags now closed. All .gallery-item divs closed properly.
+
+const gallery = document.getElementById('gallery');
+const items = gallery.querySelectorAll('.gallery-item');
+const filterBtns = document.querySelectorAll('.filters .btn');
+const searchBox = document.getElementById('searchBox');
+
+// ===== FEATURE 1: FILTER LOGIC =====
+filterBtns.forEach(btn=>{
+  btn.onclick = () => {
+    filterBtns.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    items.forEach(it=>{
+      const cat = it.dataset.category;
+      it.classList.toggle('hidden', filter !== 'all' && cat !== filter);
+    })
+  }
+});
+
+// ===== FEATURE 1B: SEARCH LOGIC =====
+searchBox.oninput = () => {
+  const q = searchBox.value.toLowerCase();
+  items.forEach(it=>{
+    const text = (it.dataset.keywords + ' + it.querySelector('.caption').textContent).toLowerCase();
+    it.classList.toggle('hidden', q && !text.includes(q));
+  })
+}
+
+// ===== FEATURE 2: LIGHTBOX POPUP =====
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbCaption = document.getElementById('lbCaption');
+const closeLb = document.getElementById('closeLb');
+
+items.forEach(it=>{
+  it.onclick = () => {
+    lbImg.src = it.querySelector('img').src;
+    lbCaption.textContent = it.querySelector('.caption').textContent;
+    lb.classList.add('show');
+  }
+});
+closeLb.onclick = () => lb.classList.remove('show');
+lb.onclick = (e) => { if(e.target === lb) lb.classList.remove('show'); }
+</script>
+</body>
+</html>
